@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mente Ativa 60+ | 30 Dias de Exercícios para Memória, Atenção e Raciocínio</title>
+<meta name="description" content="Um desafio diário de 30 dias para estimular memória, atenção e raciocínio. Baseado em estudos científicos. Acesso imediato, garantia de 7 dias.">
+
+<!-- Open Graph (pré-visualização ao compartilhar o link / anúncios) -->
+<meta property="og:title" content="Mente Ativa 60+ | 30 Dias de Exercícios para Memória, Atenção e Raciocínio">
+<meta property="og:description" content="Um pequeno compromisso diário que traz grandes resultados para o seu cérebro e sua vida.">
+<meta property="og:image" content="https://acropoledosaber.com.br/images/1-hero.webp">
+<meta property="og:url" content="https://acropoledosaber.com.br/">
+<meta property="og:type" content="product">
+
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f2;
+    font-family: Arial, sans-serif;
+  }
+  .lp-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 0 40px rgba(0,0,0,0.08);
+  }
+  .lp-section {
+    position: relative;
+    line-height: 0; /* remove espaço fantasma abaixo da imagem */
+  }
+  .lp-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  /* Área clicável invisível sobre os botões "Quero começar" desenhados nas imagens.
+     Coordenadas em % (relativas ao tamanho da própria imagem), então continuam
+     alinhadas em qualquer largura de tela. */
+  .cta-overlay {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    /* deixe visível durante testes trocando 'transparent' por 'rgba(255,0,0,0.25)' */
+    background: transparent;
+  }
+  .cta-hero {
+    top: 90%; left: 3%; width: 94%; height: 10%;
+  }
+  .cta-valor {
+    top: 89.5%; left: 2%; width: 96%; height: 10.5%;
+  }
+  .cta-garantia {
+    top: 89%; left: 3%; width: 94%; height: 11%;
+  }
+
+  /* Barra fixa de compra no rodapé da tela — some quando o usuário já está
+     bem no fim da página (perto do último botão real). Ajuda conversão
+     porque nas seções 2 a 5 e 7 a 9 não há nenhum botão visível. */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 999;
+    background: #1e5b2f;
+    color: #fff;
+    text-align: center;
+    padding: 14px 12px;
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: none;
+    box-shadow: 0 -4px 14px rgba(0,0,0,0.25);
+  }
+  .sticky-cta:active { opacity: 0.85; }
+</style>
+</head>
+<body>
+
+<div class="lp-container" id="lp-container">
+
+  <div class="lp-section">
+    <img src="images/1-hero.webp" alt="Mente Ativa 60+ — 30 dias de exercícios para memória, atenção e raciocínio" width="941" height="1672" loading="eager">
+    <a class="cta-overlay cta-hero" href="#" data-cta="1"></a>
+  </div>
+
+  <div class="lp-section">
+    <img src="images/2-beneficios.webp" alt="Benefícios do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/3-oquerecebe.webp" alt="O que você recebe ao comprar o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/4-vejapordentro.webp" alt="Veja por dentro o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/5-justificativa.webp" alt="Base científica do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/6-valor.webp" alt="Oferta e preço do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    <a class="cta-overlay cta-valor" href="#" data-cta="1"></a>
+  </div>
+
+  <div class="lp-section">
+    <img src="images/7-praquem.webp" alt="Para quem é o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/8-comofunciona.webp" alt="Como funciona o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/9-diferenciais.webp" alt="Diferenciais do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+  </div>
+
+  <div class="lp-section">
+    <img src="images/10-garantia.webp" alt="Garantia de 7 dias do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    <a class="cta-overlay cta-garantia" href="#" data-cta="1"></a>
+  </div>
+
+</div>
+
+<a class="sticky-cta" href="#" data-cta="1" id="sticky-cta">
+  🧠 QUERO COMEÇAR AGORA — Acesso Imediato
+</a>
+
+<script>
+  // =========================================================================
+  // ÚNICO PONTO QUE VOCÊ PRECISA EDITAR: cole aqui o link de checkout da
+  // Hotmart assim que criar o produto lá (Hotmart Pay). Todos os botões
+  // (os 3 sobrepostos nas imagens + a barra fixa no rodapé) usam este link.
+  // =========================================================================
+  const CHECKOUT_URL = "https://pay.hotmart.com/SEU-CODIGO-AQUI";
+
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.setAttribute('href', CHECKOUT_URL);
+  });
+
+  // --- Placeholders de rastreamento (preencha quando tiver os IDs) ---------
+  // Meta Pixel:
+  // !function(f,b,e,v,n,t,s){...}(window, document,'script',
+  // 'https://connect.facebook.net/en_US/fbevents.js');
+  // fbq('init', 'SEU_PIXEL_ID'); fbq('track', 'PageView');
+  //
+  // Google Analytics 4 (gtag.js):
+  // <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEUID"></script>
+  // gtag('config', 'G-SEUID');
+  // ---------------------------------------------------------------------------
+
+  // Dispara um evento de clique no CTA para o pixel/GA quando estiverem configurados.
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (window.fbq) fbq('track', 'InitiateCheckout');
+      if (window.gtag) gtag('event', 'begin_checkout');
+    });
+  });
+</script>
+
+</body>
+</html>
