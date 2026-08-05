@@ -14,6 +14,24 @@
 <meta property="og:url" content="https://acropoledosaber.com.br/">
 <meta property="og:type" content="product">
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1323893266191840');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
   * { box-sizing: border-box; }
   html, body {
@@ -27,6 +45,10 @@
     margin: 0 auto;
     background: #ffffff;
     box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    /* Espaço reservado no rodapé pra barra fixa (.sticky-cta) não tampar o
+       final da última imagem. O valor exato é ajustado via JS logo abaixo
+       (mede a altura real da barra), este é só um fallback. */
+    padding-bottom: 70px;
   }
   .lp-section {
     position: relative;
@@ -37,41 +59,48 @@
     width: 100%;
     height: auto;
   }
-  /* Área clicável invisível sobre os botões "Quero começar" desenhados nas imagens.
-     Coordenadas em % (relativas ao tamanho da própria imagem), então continuam
-     alinhadas em qualquer largura de tela. */
+  /* Área clicável invisível cobrindo a imagem inteira de cada seção — toda a
+     página vira "botão", não só a área do botão desenhado na imagem.
+     !important em tudo: o CSS que a Hotmart carrega dinamicamente
+     (hotmart-fb.min.css) tem estilo próprio de botão verde pra classe
+     hotmart__button-checkout, e como o <link> dela é inserido depois deste
+     <style>, ela ganha a cascata e sobrescreve position/display/background
+     se não forem forçados aqui. */
   .cta-overlay {
-    position: absolute;
-    display: block;
-    cursor: pointer;
+    position: absolute !important;
+    display: block !important;
+    cursor: pointer !important;
     /* deixe visível durante testes trocando 'transparent' por 'rgba(255,0,0,0.25)' */
-    background: transparent;
-  }
-  .cta-hero {
-    top: 90%; left: 3%; width: 94%; height: 10%;
-  }
-  .cta-valor {
-    top: 89.5%; left: 2%; width: 96%; height: 10.5%;
-  }
-  .cta-garantia {
-    top: 89%; left: 3%; width: 94%; height: 11%;
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
   }
 
   /* Barra fixa de compra no rodapé da tela — some quando o usuário já está
      bem no fim da página (perto do último botão real). Ajuda conversão
      porque nas seções 2 a 5 e 7 a 9 não há nenhum botão visível. */
   .sticky-cta {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 999;
-    background: #1e5b2f;
-    color: #fff;
-    text-align: center;
-    padding: 14px 12px;
-    font-weight: bold;
-    font-size: 17px;
-    text-decoration: none;
-    box-shadow: 0 -4px 14px rgba(0,0,0,0.25);
+    position: fixed !important;
+    left: 0 !important; right: 0 !important; bottom: 0 !important;
+    width: auto !important;
+    z-index: 999 !important;
+    background: #1e5b2f !important;
+    color: #fff !important;
+    text-align: center !important;
+    padding: 14px 12px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-weight: bold !important;
+    font-size: 17px !important;
+    text-decoration: none !important;
+    box-shadow: 0 -4px 14px rgba(0,0,0,0.25) !important;
+    display: block !important;
   }
   .sticky-cta:active { opacity: 0.85; }
 </style>
@@ -82,83 +111,102 @@
 
   <div class="lp-section">
     <img src="images/1-hero.webp" alt="Mente Ativa 60+ — 30 dias de exercícios para memória, atenção e raciocínio" width="941" height="1672" loading="eager">
-    <a class="cta-overlay cta-hero" href="#" data-cta="1"></a>
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/2-beneficios.webp" alt="Benefícios do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/3-oquerecebe.webp" alt="O que você recebe ao comprar o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/4-vejapordentro.webp" alt="Veja por dentro o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/5-justificativa.webp" alt="Base científica do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/6-valor.webp" alt="Oferta e preço do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
-    <a class="cta-overlay cta-valor" href="#" data-cta="1"></a>
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/7-praquem.webp" alt="Para quem é o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/8-comofunciona.webp" alt="Como funciona o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/9-diferenciais.webp" alt="Diferenciais do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
     <img src="images/10-garantia.webp" alt="Garantia de 7 dias do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
-    <a class="cta-overlay cta-garantia" href="#" data-cta="1"></a>
+    <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
 </div>
 
-<a class="sticky-cta" href="#" data-cta="1" id="sticky-cta">
+<a class="sticky-cta hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1" id="sticky-cta">
   🧠 QUERO COMEÇAR AGORA — Acesso Imediato
 </a>
 
+<!-- Widget oficial de checkout da Hotmart: abre o pagamento em um overlay
+     na própria página (em vez de sair pro site da Hotmart), e já integra
+     com o Pixel do Meta quando ele estiver instalado na página. Só precisa
+     desse bloco uma vez — os 11 elementos clicáveis (as 10 imagens inteiras
+     + a barra fixa) usam o mesmo link, já que todos têm a classe
+     "hotmart-fb hotmart__button-checkout". -->
+<script type="text/javascript">
+	function importHotmart(){
+ 		var imported = document.createElement('script');
+ 		imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+ 		document.head.appendChild(imported);
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+		document.head.appendChild(link);	}
+ 	importHotmart();
+</script>
+
 <script>
-  // =========================================================================
-  // ÚNICO PONTO QUE VOCÊ PRECISA EDITAR: cole aqui o link de checkout da
-  // Hotmart assim que criar o produto lá (Hotmart Pay). Todos os botões
-  // (os 3 sobrepostos nas imagens + a barra fixa no rodapé) usam este link.
-  // =========================================================================
-  const CHECKOUT_URL = "https://pay.hotmart.com/SEU-CODIGO-AQUI";
-
-  document.querySelectorAll('[data-cta]').forEach(function (el) {
-    el.setAttribute('href', CHECKOUT_URL);
-  });
-
-  // --- Placeholders de rastreamento (preencha quando tiver os IDs) ---------
-  // Meta Pixel:
-  // !function(f,b,e,v,n,t,s){...}(window, document,'script',
-  // 'https://connect.facebook.net/en_US/fbevents.js');
-  // fbq('init', 'SEU_PIXEL_ID'); fbq('track', 'PageView');
-  //
-  // Google Analytics 4 (gtag.js):
-  // <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEUID"></script>
-  // gtag('config', 'G-SEUID');
-  // ---------------------------------------------------------------------------
-
-  // Dispara um evento de clique no CTA para o pixel/GA quando estiverem configurados.
+  // Meta Pixel já instalado no <head> (ID 1323893266191840).
+  // Dispara o evento de clique no CTA pro Pixel.
   document.querySelectorAll('[data-cta]').forEach(function (el) {
     el.addEventListener('click', function () {
       if (window.fbq) fbq('track', 'InitiateCheckout');
-      if (window.gtag) gtag('event', 'begin_checkout');
     });
   });
+
+  // Reserva, no fim da página, o espaço exato da altura da barra fixa —
+  // sem isso ela fica sobreposta por cima do final da última imagem
+  // (que já tem o botão real "QUERO COMEÇAR AGORA" desenhado nela).
+  // Recalcula no load e no resize, porque em telas estreitas o texto da
+  // barra pode quebrar em 2 linhas e mudar de altura.
+  function ajustarEspacoBarraFixa() {
+    var barra = document.getElementById('sticky-cta');
+    var container = document.getElementById('lp-container');
+    if (barra && container) {
+      container.style.paddingBottom = barra.offsetHeight + 'px';
+    }
+  }
+  window.addEventListener('load', ajustarEspacoBarraFixa);
+  window.addEventListener('resize', ajustarEspacoBarraFixa);
 </script>
 
 </body>
