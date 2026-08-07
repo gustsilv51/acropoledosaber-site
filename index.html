@@ -14,6 +14,10 @@
 <meta property="og:url" content="https://acropoledosaber.com.br/">
 <meta property="og:type" content="product">
 
+<!-- Carrega a imagem do topo (hero) o quanto antes, antes mesmo do HTML
+     terminar de ser processado — é a primeira coisa que a pessoa vê. -->
+<link rel="preload" as="image" href="images/1-hero.avif" type="image/avif" fetchpriority="high">
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -53,6 +57,9 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
   .lp-section {
     position: relative;
     line-height: 0; /* remove espaço fantasma abaixo da imagem */
+  }
+  .lp-section picture {
+    display: block;
   }
   .lp-section img {
     display: block;
@@ -110,52 +117,82 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
 <div class="lp-container" id="lp-container">
 
   <div class="lp-section">
-    <img src="images/1-hero.webp" alt="Mente Ativa 60+ — 30 dias de exercícios para memória, atenção e raciocínio" width="941" height="1672" loading="eager">
+    <picture>
+      <source srcset="images/1-hero.avif" type="image/avif">
+      <img src="images/1-hero.webp" alt="Mente Ativa 60+ — 30 dias de exercícios para memória, atenção e raciocínio" width="941" height="1672" loading="eager" fetchpriority="high">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/2-beneficios.webp" alt="Benefícios do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <picture>
+      <source srcset="images/2-beneficios.avif" type="image/avif">
+      <img src="images/2-beneficios.webp" alt="Benefícios do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/3-oquerecebe.webp" alt="O que você recebe ao comprar o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <picture>
+      <source srcset="images/3-oquerecebe.avif" type="image/avif">
+      <img src="images/3-oquerecebe.webp" alt="O que você recebe ao comprar o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/4-vejapordentro.webp" alt="Veja por dentro o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <picture>
+      <source srcset="images/4-vejapordentro.avif" type="image/avif">
+      <img src="images/4-vejapordentro.webp" alt="Veja por dentro o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/5-justificativa.webp" alt="Base científica do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    <picture>
+      <source srcset="images/5-justificativa.avif" type="image/avif">
+      <img src="images/5-justificativa.webp" alt="Base científica do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/6-valor.webp" alt="Oferta e preço do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    <picture>
+      <source srcset="images/6-valor.avif" type="image/avif">
+      <img src="images/6-valor.webp" alt="Oferta e preço do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/7-praquem.webp" alt="Para quem é o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <picture>
+      <source srcset="images/7-praquem.avif" type="image/avif">
+      <img src="images/7-praquem.webp" alt="Para quem é o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/8-comofunciona.webp" alt="Como funciona o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <picture>
+      <source srcset="images/8-comofunciona.avif" type="image/avif">
+      <img src="images/8-comofunciona.webp" alt="Como funciona o Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/9-diferenciais.webp" alt="Diferenciais do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    <picture>
+      <source srcset="images/9-diferenciais.avif" type="image/avif">
+      <img src="images/9-diferenciais.webp" alt="Diferenciais do Mente Ativa 60+" width="941" height="1672" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
-    <img src="images/10-garantia.webp" alt="Garantia de 7 dias do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    <picture>
+      <source srcset="images/10-garantia.avif" type="image/avif">
+      <img src="images/10-garantia.webp" alt="Garantia de 7 dias do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
+    </picture>
     <a class="cta-overlay hotmart-fb hotmart__button-checkout" onclick="return false;" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
