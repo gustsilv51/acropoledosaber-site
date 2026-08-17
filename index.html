@@ -1,255 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="facebook-domain-verification" content="ef6sqevnes3hhn8mv7p3bhau8fu4ef" />
-<title>Mente Ativa 60+ | 30 Dias de Exercícios para Memória, Atenção e Raciocínio</title>
-<meta name="description" content="Um desafio diário de 30 dias para estimular memória, atenção e raciocínio. Baseado em estudos científicos. Acesso imediato, garantia de 7 dias.">
-
-<!-- Open Graph (pré-visualização ao compartilhar o link / anúncios) -->
-<meta property="og:title" content="Mente Ativa 60+ | 30 Dias de Exercícios para Memória, Atenção e Raciocínio">
-<meta property="og:description" content="Um pequeno compromisso diário que traz grandes resultados para o seu cérebro e sua vida.">
-<meta property="og:image" content="https://acropoledosaber.com.br/images/1-hero.webp">
-<meta property="og:url" content="https://acropoledosaber.com.br/">
-<meta property="og:type" content="product">
-
-<!-- Carrega a imagem do topo (hero) o quanto antes, antes mesmo do HTML
-     terminar de ser processado — é a primeira coisa que a pessoa vê. -->
-<link rel="preload" as="image" href="images/1-hero.avif" type="image/avif" fetchpriority="high">
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1323893266191840');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-<style>
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: #f4f4f2;
-    font-family: Arial, sans-serif;
-  }
-  .lp-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #ffffff;
-    box-shadow: 0 0 40px rgba(0,0,0,0.08);
-    /* Espaço reservado no rodapé pra barra fixa (.sticky-cta) não tampar o
-       final da última imagem. O valor exato é ajustado via JS logo abaixo
-       (mede a altura real da barra), este é só um fallback. */
-    padding-bottom: 70px;
-  }
-  .lp-section {
-    position: relative;
-    line-height: 0; /* remove espaço fantasma abaixo da imagem */
-  }
-  .lp-section picture {
-    display: block;
-  }
-  .lp-section img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  /* Área clicável invisível só sobre os botões "Quero começar" desenhados nas
-     imagens (hero, oferta/valor, garantia) — nas outras seções (conteúdo, sem
-     botão desenhado) não tem overlay, pra não disparar clique/InitiateCheckout
-     por toque acidental em imagem sem nenhum sinal visual de link.
-     Coordenadas em % (relativas ao tamanho da própria imagem), então continuam
-     alinhadas em qualquer largura de tela.
-     !important em tudo: o CSS que a Hotmart carrega dinamicamente
-     (hotmart-fb.min.css) tem estilo próprio de botão verde pra classe
-     hotmart__button-checkout, e como o <link> dela é inserido depois deste
-     <style>, ela ganha a cascata e sobrescreve position/display/background
-     se não forem forçados aqui. */
-  .cta-overlay {
-    position: absolute !important;
-    display: block !important;
-    cursor: pointer !important;
-    /* deixe visível durante testes trocando 'transparent' por 'rgba(255,0,0,0.25)' */
-    background: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    min-height: 0 !important;
-    box-shadow: none !important;
-  }
-  .cta-hero {
-    top: 90% !important; left: 3% !important; width: 94% !important; height: 10% !important;
-  }
-  .cta-valor {
-    top: 90% !important; left: 2% !important; width: 92% !important; height: 10% !important;
-  }
-  .cta-garantia {
-    top: 89% !important; left: 3% !important; width: 94% !important; height: 11% !important;
-  }
-
-  /* Barra fixa de compra no rodapé da tela — some quando o usuário já está
-     bem no fim da página (perto do último botão real). Ajuda conversão
-     porque nas seções 2 a 5 e 7 a 9 não há nenhum botão visível. */
-  .sticky-cta {
-    position: fixed !important;
-    left: 0 !important; right: 0 !important; bottom: 0 !important;
-    width: auto !important;
-    z-index: 999 !important;
-    background: #1e5b2f !important;
-    color: #fff !important;
-    text-align: center !important;
-    padding: 14px 12px !important;
-    margin: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    font-weight: bold !important;
-    font-size: 17px !important;
-    text-decoration: none !important;
-    box-shadow: 0 -4px 14px rgba(0,0,0,0.25) !important;
-    display: block !important;
-  }
-  .sticky-cta:active { opacity: 0.85; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mente Ativa 60+ | 30 dias de exercícios</title>
+  <meta name="description" content="Atividades diárias de memória, atenção e raciocínio para pessoas 60+. PDF com acesso permanente e três bônus.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Mente Ativa 60+ - início"><span class="brand-mark">M</span><span>Mente Ativa <b>60+</b></span></a>
+    <a class="button button-outline" href="https://pay.hotmart.com/P107004863V" target="_blank" rel="noopener">Quero começar</a>
+  </header>
 
-<div class="lp-container" id="lp-container">
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Programa digital de 30 dias</p>
+        <h1>15 minutos por dia para manter sua mente em movimento</h1>
+        <p class="lead">Exercite memória, atenção e raciocínio com atividades simples, letras grandes e um desafio por dia — no seu próprio ritmo.</p>
+        <ul class="checks"><li>Acesso imediato e permanente</li><li>Use no tablet ou imprima</li><li>Garantia de 7 dias</li></ul>
+        <div class="price"><small>Pagamento único</small><strong>R$ 29,90</strong><span>Menos de R$ 1 por dia</span></div>
+        <a class="button button-primary button-large" href="https://pay.hotmart.com/P107004863V" target="_blank" rel="noopener">QUERO COMEÇAR MEUS 30 DIAS</a>
+        <p class="microcopy">Compra processada com segurança pela Hotmart</p>
+      </div>
+      <div class="hero-visual"><div class="sunburst"></div><img src="assets/ebook-cover.jpg" alt="Capa do e-book Mente Ativa 60+"><div class="floating-card"><b>30</b><span>dias de atividades</span></div></div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/1-hero.avif" type="image/avif">
-      <img src="images/1-hero.webp" alt="Mente Ativa 60+ — 30 dias de exercícios para memória, atenção e raciocínio" width="941" height="1672" loading="eager" fetchpriority="high">
-    </picture>
-    <a class="cta-overlay cta-hero hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
-  </div>
+    <section class="problem section">
+      <div class="narrow center">
+        <p class="eyebrow">Feito para o seu ritmo</p>
+        <h2>Uma rotina simples para quem quer continuar exercitando a mente</h2>
+        <p class="section-lead">Nem sempre é fácil encontrar atividades com boa leitura, orientações claras e uma sequência que ajude a manter a constância. O Mente Ativa 60+ reúne tudo isso em um programa diário acolhedor e fácil de acompanhar.</p>
+      </div>
+      <div class="benefit-grid container">
+        <article><span>01</span><h3>Um dia de cada vez</h3><p>Abra o material, faça a atividade proposta e continue no dia seguinte.</p></article>
+        <article><span>02</span><h3>Leitura confortável</h3><p>Letras grandes, alto contraste e páginas organizadas para pessoas 60+.</p></article>
+        <article><span>03</span><h3>Atividades variadas</h3><p>Desafios de memória, atenção, linguagem, lógica e raciocínio.</p></article>
+      </div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/2-beneficios.avif" type="image/avif">
-      <img src="images/2-beneficios.webp" alt="Benefícios do Mente Ativa 60+" width="941" height="1672" loading="lazy">
-    </picture>
-  </div>
+    <section class="preview section" id="por-dentro">
+      <div class="container split-heading"><div><p class="eyebrow">Veja por dentro</p><h2>Exercícios que mudam a cada dia</h2></div><p>O material principal tem 44 páginas, com orientações, autoavaliações, 30 atividades diárias e gabarito completo.</p></div>
+      <div class="page-gallery container">
+        <figure><img src="assets/exercise-memory.jpg" alt="Exercício de lista de palavras"><figcaption>Memória e recordação</figcaption></figure>
+        <figure><img src="assets/exercise-visual.jpg" alt="Exercício de memória visual"><figcaption>Memória visual</figcaption></figure>
+        <figure><img src="assets/exercise-details.jpg" alt="Exercício de percepção de detalhes"><figcaption>Percepção de detalhes</figcaption></figure>
+        <figure><img src="assets/exercise-logic.jpg" alt="Exercício de lógica e resolução de problemas"><figcaption>Lógica e raciocínio</figcaption></figure>
+      </div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/3-oquerecebe.avif" type="image/avif">
-      <img src="images/3-oquerecebe.webp" alt="O que você recebe ao comprar o Mente Ativa 60+" width="941" height="1672" loading="lazy">
-    </picture>
-  </div>
+    <section class="how section">
+      <div class="narrow center"><p class="eyebrow">Como funciona</p><h2>Começar é muito simples</h2></div>
+      <ol class="steps container"><li><b>1</b><h3>Faça sua compra</h3><p>Finalize o pagamento único pela Hotmart.</p></li><li><b>2</b><h3>Receba o acesso</h3><p>Baixe o PDF e guarde para consultar quando quiser.</p></li><li><b>3</b><h3>Escolha como usar</h3><p>Leia no tablet ou imprima para escrever à mão.</p></li><li><b>4</b><h3>Pratique diariamente</h3><p>Reserve cerca de 15 minutos para cada atividade.</p></li></ol>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/4-vejapordentro.avif" type="image/avif">
-      <img src="images/4-vejapordentro.webp" alt="Veja por dentro o Mente Ativa 60+" width="941" height="1672" loading="lazy">
-    </picture>
-  </div>
+    <section class="included section">
+      <div class="container included-grid">
+        <div><p class="eyebrow">O que você recebe</p><h2>Um programa completo, sem complicação</h2><ul class="feature-list"><li>30 exercícios — um para cada dia</li><li>Autoavaliação inicial e final</li><li>Atividades de diferentes habilidades</li><li>Gabarito completo no final</li><li>PDF para impressão ou uso digital</li><li>Acesso permanente para uso pessoal</li></ul></div>
+        <div class="book-stack"><img src="assets/ebook-cover.jpg" alt="Capa do Mente Ativa 60+"><div class="total-badge"><b>44</b><span>páginas no material principal</span></div></div>
+      </div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/5-justificativa.avif" type="image/avif">
-      <img src="images/5-justificativa.webp" alt="Base científica do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
-    </picture>
-  </div>
+    <section class="bonuses section" id="bonus">
+      <div class="narrow center"><p class="eyebrow">Bônus incluídos</p><h2>Mais três materiais para acompanhar sua jornada</h2><p class="section-lead">Você recebe os três PDFs abaixo sem custo adicional.</p></div>
+      <div class="bonus-grid container">
+        <article><img src="assets/bonus-habitos.jpg" alt="Capa do Guia de Hábitos para um Cérebro Ativo"><div><span>BÔNUS 1</span><h3>Guia de Hábitos para um Cérebro Ativo</h3><p>21 hábitos, uma rotina prática de 15 minutos e um plano de 30 dias.</p></div></article>
+        <article><img src="assets/bonus-sinais.jpg" alt="Capa do bônus Sinais de Alerta"><div><span>BÔNUS 2</span><h3>Sinais de Alerta — Quando Procurar um Médico</h3><p>Um guia educativo para diferenciar situações ocasionais de sinais que merecem avaliação.</p></div></article>
+        <article><img src="assets/bonus-mitos.jpg" alt="Capa do bônus 10 Mitos e Verdades"><div><span>BÔNUS 3</span><h3>10 Mitos e Verdades sobre a Memória após os 60</h3><p>Informações curtas e fáceis de consultar sobre memória e envelhecimento.</p></div></article>
+      </div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/6-valor.avif" type="image/avif">
-      <img src="images/6-valor.webp" alt="Oferta e preço do Mente Ativa 60+ — R$ 29,90" width="1024" height="1535" loading="lazy">
-    </picture>
-    <a class="cta-overlay cta-valor hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
-  </div>
+    <section class="audience section">
+      <div class="container audience-grid"><div><p class="eyebrow">Este material é para você?</p><h2>Foi pensado para pessoas 60+ que...</h2></div><ul><li>Desejam criar uma rotina de exercícios mentais</li><li>Preferem atividades simples e bem explicadas</li><li>Valorizam letras grandes e páginas organizadas</li><li>Querem praticar no próprio ritmo, sem pressão</li><li>Gostam de desafios variados e respostas para conferir</li></ul></div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/7-praquem.avif" type="image/avif">
-      <img src="images/7-praquem.webp" alt="Para quem é o Mente Ativa 60+" width="941" height="1672" loading="lazy">
-    </picture>
-  </div>
+    <section class="offer section" id="oferta">
+      <div class="offer-card container">
+        <div><p class="eyebrow light">Oferta completa</p><h2>Mente Ativa 60+ + 3 bônus</h2><ul><li>44 páginas no programa principal</li><li>36 páginas nos três bônus</li><li>80 páginas no pacote completo</li><li>Acesso imediato e permanente</li><li>Garantia de 7 dias</li></ul></div>
+        <div class="checkout-box"><small>Pagamento único de</small><div class="offer-price">R$ 29,90</div><p>Sem mensalidade e sem parcelamento</p><a class="button button-gold button-large" href="https://pay.hotmart.com/P107004863V" target="_blank" rel="noopener">QUERO GARANTIR MEU ACESSO</a><span>Compra segura pela Hotmart</span></div>
+      </div>
+    </section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/8-comofunciona.avif" type="image/avif">
-      <img src="images/8-comofunciona.webp" alt="Como funciona o Mente Ativa 60+" width="941" height="1672" loading="lazy">
-    </picture>
-  </div>
+    <section class="guarantee section"><div class="container guarantee-card"><div class="seal">7<small>DIAS</small></div><div><p class="eyebrow">Sua compra protegida</p><h2>Experimente por 7 dias</h2><p>Você terá 7 dias de garantia para conhecer o material. Caso decida que ele não é para você, poderá solicitar o reembolso seguindo as regras da Hotmart.</p></div></div></section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/9-diferenciais.avif" type="image/avif">
-      <img src="images/9-diferenciais.webp" alt="Diferenciais do Mente Ativa 60+" width="941" height="1672" loading="lazy">
-    </picture>
-  </div>
+    <section class="faq section"><div class="narrow"><p class="eyebrow center">Perguntas frequentes</p><h2 class="center">Antes de começar</h2>
+      <details><summary>O produto é físico?</summary><p>Não. Você receberá arquivos digitais em PDF. Poderá usá-los no tablet ou imprimir para uso pessoal.</p></details>
+      <details><summary>Por quanto tempo terei acesso?</summary><p>O acesso é permanente. Recomendamos baixar e guardar os arquivos após a compra.</p></details>
+      <details><summary>Quanto tempo leva cada atividade?</summary><p>A proposta é reservar, em média, cerca de 15 minutos por dia.</p></details>
+      <details><summary>O material tem as respostas?</summary><p>Sim. O e-book principal inclui o gabarito dos 30 exercícios no final.</p></details>
+      <details><summary>Este material trata problemas de memória?</summary><p>Não. É um material educativo e de entretenimento cognitivo. Não realiza diagnóstico e não substitui atendimento profissional.</p></details>
+      <details><summary>Como funciona a garantia?</summary><p>A compra possui garantia de 7 dias e o reembolso é solicitado pelos canais da Hotmart.</p></details>
+    </div></section>
 
-  <div class="lp-section">
-    <picture>
-      <source srcset="images/10-garantia.avif" type="image/avif">
-      <img src="images/10-garantia.webp" alt="Garantia de 7 dias do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
-    </picture>
-    <a class="cta-overlay cta-garantia hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
-  </div>
+    <section class="final-cta section"><div class="narrow center"><p class="eyebrow light">Comece hoje</p><h2>Um exercício por dia. No seu tempo. Do seu jeito.</h2><p>Tenha acesso ao Mente Ativa 60+ e aos três bônus por R$ 29,90.</p><a class="button button-gold button-large" href="https://pay.hotmart.com/P107004863V" target="_blank" rel="noopener">QUERO COMEÇAR AGORA</a></div></section>
+  </main>
 
-</div>
-
-<a class="sticky-cta hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1" id="sticky-cta">
-  🧠 QUERO COMEÇAR AGORA — Acesso Imediato
-</a>
-
-<!-- Widget oficial de checkout da Hotmart: abre o pagamento em um overlay
-     na própria página (em vez de sair pro site da Hotmart), e já integra
-     com o Pixel do Meta quando ele estiver instalado na página. Só precisa
-     desse bloco uma vez — os 4 elementos clicáveis (hero, oferta/valor,
-     garantia + a barra fixa) usam o mesmo link, já que todos têm a classe
-     "hotmart-fb hotmart__button-checkout". -->
-<script type="text/javascript">
-	function importHotmart(){
- 		var imported = document.createElement('script');
- 		imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
- 		document.head.appendChild(imported);
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-		document.head.appendChild(link);	}
- 	importHotmart();
-</script>
-
-<script>
-  // Meta Pixel já instalado no <head> (ID 1323893266191840).
-  // Dispara o evento de clique no CTA pro Pixel.
-  document.querySelectorAll('[data-cta]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      if (window.fbq) fbq('track', 'InitiateCheckout');
-    });
-  });
-
-  // Reserva, no fim da página, o espaço exato da altura da barra fixa —
-  // sem isso ela fica sobreposta por cima do final da última imagem
-  // (que já tem o botão real "QUERO COMEÇAR AGORA" desenhado nela).
-  // Recalcula no load e no resize, porque em telas estreitas o texto da
-  // barra pode quebrar em 2 linhas e mudar de altura.
-  function ajustarEspacoBarraFixa() {
-    var barra = document.getElementById('sticky-cta');
-    var container = document.getElementById('lp-container');
-    if (barra && container) {
-      container.style.paddingBottom = barra.offsetHeight + 'px';
-    }
-  }
-  window.addEventListener('load', ajustarEspacoBarraFixa);
-  window.addEventListener('resize', ajustarEspacoBarraFixa);
-</script>
-
+  <footer><div class="container"><div class="footer-brand">Mente Ativa <b>60+</b></div><p><strong>Aviso importante:</strong> Este material tem finalidade educativa e de entretenimento cognitivo. Não substitui avaliação, diagnóstico ou tratamento por profissional de saúde. Não se destina a prevenir, tratar ou curar qualquer doença, incluindo Alzheimer ou outras formas de demência. Se você notar esquecimentos frequentes, confusão ou outros sinais de alerta, procure orientação médica.</p><div class="footer-bottom"><span>Responsável: GM Negócios Digitais LTDA</span><a href="mailto:acropolesaber@gmail.com">acropolesaber@gmail.com</a><span>© 2026 Mente Ativa 60+</span></div></div></footer>
 </body>
 </html>
