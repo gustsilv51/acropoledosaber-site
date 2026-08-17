@@ -66,8 +66,12 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
     width: 100%;
     height: auto;
   }
-  /* Área clicável invisível cobrindo a imagem inteira de cada seção — toda a
-     página vira "botão", não só a área do botão desenhado na imagem.
+  /* Área clicável invisível só sobre os botões "Quero começar" desenhados nas
+     imagens (hero, oferta/valor, garantia) — nas outras seções (conteúdo, sem
+     botão desenhado) não tem overlay, pra não disparar clique/InitiateCheckout
+     por toque acidental em imagem sem nenhum sinal visual de link.
+     Coordenadas em % (relativas ao tamanho da própria imagem), então continuam
+     alinhadas em qualquer largura de tela.
      !important em tudo: o CSS que a Hotmart carrega dinamicamente
      (hotmart-fb.min.css) tem estilo próprio de botão verde pra classe
      hotmart__button-checkout, e como o <link> dela é inserido depois deste
@@ -85,7 +89,15 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
     border-radius: 0 !important;
     min-height: 0 !important;
     box-shadow: none !important;
-    top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
+  }
+  .cta-hero {
+    top: 90% !important; left: 3% !important; width: 94% !important; height: 10% !important;
+  }
+  .cta-valor {
+    top: 90% !important; left: 2% !important; width: 92% !important; height: 10% !important;
+  }
+  .cta-garantia {
+    top: 89% !important; left: 3% !important; width: 94% !important; height: 11% !important;
   }
 
   /* Barra fixa de compra no rodapé da tela — some quando o usuário já está
@@ -121,7 +133,7 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/1-hero.avif" type="image/avif">
       <img src="images/1-hero.webp" alt="Mente Ativa 60+ — 30 dias de exercícios para memória, atenção e raciocínio" width="941" height="1672" loading="eager" fetchpriority="high">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
+    <a class="cta-overlay cta-hero hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -129,7 +141,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/2-beneficios.avif" type="image/avif">
       <img src="images/2-beneficios.webp" alt="Benefícios do Mente Ativa 60+" width="941" height="1672" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -137,7 +148,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/3-oquerecebe.avif" type="image/avif">
       <img src="images/3-oquerecebe.webp" alt="O que você recebe ao comprar o Mente Ativa 60+" width="941" height="1672" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -145,7 +155,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/4-vejapordentro.avif" type="image/avif">
       <img src="images/4-vejapordentro.webp" alt="Veja por dentro o Mente Ativa 60+" width="941" height="1672" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -153,7 +162,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/5-justificativa.avif" type="image/avif">
       <img src="images/5-justificativa.webp" alt="Base científica do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -161,7 +169,7 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/6-valor.avif" type="image/avif">
       <img src="images/6-valor.webp" alt="Oferta e preço do Mente Ativa 60+ — R$ 29,90" width="1024" height="1535" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
+    <a class="cta-overlay cta-valor hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -169,7 +177,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/7-praquem.avif" type="image/avif">
       <img src="images/7-praquem.webp" alt="Para quem é o Mente Ativa 60+" width="941" height="1672" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -177,7 +184,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/8-comofunciona.avif" type="image/avif">
       <img src="images/8-comofunciona.webp" alt="Como funciona o Mente Ativa 60+" width="941" height="1672" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -185,7 +191,6 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/9-diferenciais.avif" type="image/avif">
       <img src="images/9-diferenciais.webp" alt="Diferenciais do Mente Ativa 60+" width="941" height="1672" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
   <div class="lp-section">
@@ -193,7 +198,7 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
       <source srcset="images/10-garantia.avif" type="image/avif">
       <img src="images/10-garantia.webp" alt="Garantia de 7 dias do Mente Ativa 60+" width="1024" height="1536" loading="lazy">
     </picture>
-    <a class="cta-overlay hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
+    <a class="cta-overlay cta-garantia hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/P107004863V" data-cta="1"></a>
   </div>
 
 </div>
@@ -205,8 +210,8 @@ src="https://www.facebook.com/tr?id=1323893266191840&ev=PageView&noscript=1"
 <!-- Widget oficial de checkout da Hotmart: abre o pagamento em um overlay
      na própria página (em vez de sair pro site da Hotmart), e já integra
      com o Pixel do Meta quando ele estiver instalado na página. Só precisa
-     desse bloco uma vez — os 11 elementos clicáveis (as 10 imagens inteiras
-     + a barra fixa) usam o mesmo link, já que todos têm a classe
+     desse bloco uma vez — os 4 elementos clicáveis (hero, oferta/valor,
+     garantia + a barra fixa) usam o mesmo link, já que todos têm a classe
      "hotmart-fb hotmart__button-checkout". -->
 <script type="text/javascript">
 	function importHotmart(){
