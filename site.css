@@ -89,3 +89,54 @@ a.button-secondary.hotmart-fb,
 a.button-secondary.hotmart__button-checkout{background-color:var(--forest)!important;color:#fff!important;box-shadow:0 12px 28px rgba(6,61,54,.22)!important}
 a.button-gold.hotmart-fb,
 a.button-gold.hotmart__button-checkout{background-color:var(--gold)!important;color:var(--navy)!important;box-shadow:0 12px 30px rgba(0,0,0,.18)!important}
+
+/* Legibilidade e acessibilidade para o público 60+ */
+.hero-highlight{display:inline;color:#c94f24}
+.content-grid article{text-align:center}
+.content-grid span{font-size:1.2rem}
+.content-grid p{font-size:1rem;line-height:1.6}
+.section-action .button-secondary{min-height:66px!important;padding:19px 38px!important;font-size:1.1rem!important}
+.bonus-note{padding:15px 24px;font-size:1.05rem;line-height:1.45}
+.bonus-copy p,.steps p{font-size:.98rem;line-height:1.6}
+.audience-card small{font-size:.88rem;line-height:1.5}
+.difference-facts span{font-size:.9rem;line-height:1.45}
+.gallery figcaption{font-size:.9rem}
+.checkout-box>p{font-size:.9rem}
+.checkout-safe{font-size:.82rem;line-height:1.45}
+.guarantee-mini span{font-size:.82rem;line-height:1.4}
+.promotion-deadline{display:block;margin:-5px 0 18px;padding:9px 12px;border-radius:10px;background:#fff1c9;color:#70551c;font-size:.92rem;line-height:1.35}
+footer{font-size:.9rem;line-height:1.6}
+
+@media(max-width:560px){
+  body{padding-bottom:76px;font-size:18px}
+  .notice{padding:9px 14px;font-size:.78rem;line-height:1.4}
+  .topbar{height:68px;gap:10px;padding-inline:12px}
+  .site-logo{width:132px;height:42px}
+  .topbar>.button{display:inline-flex;min-height:44px!important;padding:9px 12px!important;font-size:.82rem!important;white-space:nowrap}
+  h1{font-size:2.65rem;line-height:1.02}
+  h2{font-size:2.2rem;line-height:1.1}
+  h3{font-size:1.28rem}
+  .lead,.section-lead{font-size:1.08rem;line-height:1.65}
+  .eyebrow{font-size:.82rem;line-height:1.4}
+  .hero-facts li{font-size:.82rem;line-height:1.35}
+  .hero-facts span{font-size:1.5rem}
+  .microcopy{font-size:.88rem;line-height:1.5}
+  .product-note b{font-size:.92rem}
+  .product-note span{font-size:.76rem}
+  .trust-strip b{font-size:1rem}
+  .trust-strip span{font-size:.88rem}
+  .page-card figcaption{font-size:.84rem}
+  .page-badge span{font-size:.76rem}
+  .comparison-caption small{font-size:.62rem}
+  .comparison-caption strong{font-size:.82rem}
+  .difference-facts span{font-size:.92rem}
+  .content-grid p,.bonus-copy p,.steps p{font-size:1rem}
+  .audience-card small{font-size:.94rem}
+  .checkout-safe,.guarantee-mini span{font-size:.86rem}
+  .faq summary{padding:21px 18px;font-size:1.05rem;line-height:1.4}
+  .faq details p{padding:0 18px 21px;font-size:1rem;line-height:1.65}
+  .bonus-note{width:auto;max-width:calc(100% - 32px);font-size:1rem}
+  footer{font-size:.9rem}
+  .mobile-buy{position:fixed;z-index:60;right:0;bottom:0;left:0;display:flex;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,250,240,.97);border-top:1px solid rgba(6,61,54,.14);box-shadow:0 -8px 28px rgba(8,40,75,.14);backdrop-filter:blur(12px)}
+  .mobile-buy .button{width:100%;min-height:52px!important;padding:13px 16px!important;font-size:1rem!important}
+}
