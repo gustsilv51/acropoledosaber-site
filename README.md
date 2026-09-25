@@ -4,8 +4,7 @@ Site estático pronto para GitHub Pages ou hospedagem convencional.
 
 ## Arquivos
 
-- `index.html`: página principal;
-- `site.css`: estilos responsivos;
+- `index.html`: página principal (estilos embutidos na própria página);
 - `assets/`: imagens utilizadas pela página;
 - `.nojekyll`: evita processamento desnecessário pelo Jekyll no GitHub Pages.
 
