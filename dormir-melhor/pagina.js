@@ -1,0 +1,16 @@
+(()=>{
+const track=document.querySelector('.track'),pages=[...track.querySelectorAll('.page')],prev=document.querySelector('.car-btn.prev'),next=document.querySelector('.car-btn.next'),dialog=document.querySelector('.lightbox'),image=dialog.querySelector('img'),counter=document.querySelector('.book-counter'),reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let index=0,busy=false,visible=false,opener,lastInteraction=0,startX=null;
+function render(){pages.forEach((p,i)=>{p.classList.toggle('active',i===index);p.setAttribute('aria-hidden',String(i!==index));p.querySelector('button').tabIndex=i===index?0:-1});counter.textContent=`Prévia ${index+1} de ${pages.length} · ${pages[index].querySelector('figcaption').textContent}`;prev.disabled=busy;next.disabled=busy}
+function turn(direction,manual=false){if(busy)return;if(manual)lastInteraction=Date.now();const from=pages[index],target=(index+direction+pages.length)%pages.length,to=pages[target];busy=true;prev.disabled=next.disabled=true;
+if(reduced.matches){index=target;busy=false;render();return}
+to.classList.add('incoming');if(direction>0){from.classList.add('flipping');requestAnimationFrame(()=>requestAnimationFrame(()=>from.classList.add('forward')))}else{to.classList.add('flipping','backward');requestAnimationFrame(()=>requestAnimationFrame(()=>to.classList.add('returning')))}
+setTimeout(()=>{from.classList.remove('active','flipping','forward');to.classList.remove('incoming','flipping','backward','returning');index=target;busy=false;render()},750)}
+prev.addEventListener('click',()=>turn(-1,true));next.addEventListener('click',()=>turn(1,true));
+track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();turn(e.key==='ArrowRight'?1:-1,true)}});
+track.addEventListener('pointerdown',e=>{startX=e.clientX;lastInteraction=Date.now()},{passive:true});track.addEventListener('pointerup',e=>{if(startX!==null&&Math.abs(e.clientX-startX)>45)turn(e.clientX<startX?1:-1,true);startX=null},{passive:true});track.addEventListener('pointercancel',()=>{startX=null});
+new IntersectionObserver(entries=>{visible=entries[0].isIntersecting},{threshold:.35}).observe(track);
+setInterval(()=>{if(visible&&!busy&&!reduced.matches&&!document.hidden&&!dialog.open&&!track.matches(':hover')&&!track.contains(document.activeElement)&&Date.now()-lastInteraction>8000)turn(1)},3500);render();
+document.addEventListener('click',e=>{const zoom=e.target.closest('[data-zoom]');if(zoom&&!busy){opener=zoom;image.src=zoom.dataset.zoom;image.alt=zoom.querySelector('img').alt;dialog.showModal()}else if(e.target===dialog||e.target.closest('.lightbox .close'))dialog.close()});dialog.addEventListener('close',()=>{lastInteraction=Date.now();opener?.focus()});
+const bar=document.querySelector('.mobile-buy'),content=document.querySelector('#conteudo'),offer=document.querySelector('#oferta');function updateBar(){const rect=offer.getBoundingClientRect();bar.classList.toggle('show',content.getBoundingClientRect().top<innerHeight&&!(rect.top<innerHeight&&rect.bottom>0))}addEventListener('scroll',updateBar,{passive:true});addEventListener('resize',updateBar);updateBar();
+})();
