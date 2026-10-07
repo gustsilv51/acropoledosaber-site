@@ -4,6 +4,6 @@ for (const [plano,url] of Object.entries(CHECKOUTS)) {
  if (!url) continue;
  const link=new URL(url); if(link.protocol!=="https:") continue;
  const slot=document.getElementById("checkout-"+plano),button=document.createElement("a");
- button.className="button";button.href=link.href;button.textContent=plano==="completo"?"Quero o plano completo!":"Quero o plano básico";
+ button.className="button";button.href=link.href;button.setAttribute("data-hotmart-checkout","");button.textContent=plano==="completo"?"Quero o plano completo!":"Quero o plano básico";
  slot.className="";slot.replaceChildren(button);
 }
