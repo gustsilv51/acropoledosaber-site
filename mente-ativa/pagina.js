@@ -35,6 +35,10 @@
       }, 420);
     }, 420);
   }
+  // Hidden spreads never trigger native lazy-loading; fetch them shortly after load so page turns are not blank.
+  window.addEventListener('load', () => setTimeout(() => {
+    document.querySelectorAll('.book-spread[hidden] img').forEach(img => { img.loading = 'eager'; });
+  }, 800));
   previous.addEventListener('click', () => turn(-1));
   next.addEventListener('click', () => turn(1));
   carousel.addEventListener('keydown', event => {
