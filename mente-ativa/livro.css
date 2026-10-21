@@ -81,3 +81,37 @@
   .hero-price-line strong{font-size:2.2rem}
   .hero-details{justify-content:center}
 }
+
+/* Compra mais legível: contraste e tipografia dos botões. */
+.button{background:#0b5a4d;color:#fff;box-shadow:0 10px 24px #063d3626}
+.button:hover{background:#063d36;box-shadow:0 12px 28px #063d3633}
+.plan-basic .button-basic{background:#fff;color:#0b5a4d;border-color:#0b5a4d}
+.plan-basic .button-basic:hover{background:#eaf6f1}
+.plan-purchase{display:flex;flex-direction:column;align-items:center;margin:6px 0 14px}
+.plan-purchase .old-price{width:100%;padding-top:12px}
+.plan-purchase .button{margin:14px 0 8px}
+.plan-purchase .save{margin-top:4px}
+.plan-purchase .launch-note{color:#34505f;font-size:16px;margin:8px 0}
+.offer .plan-name{margin:0 0 8px}
+.offer .plan-sub{margin:0 0 12px;color:#34505f;font-size:17px;line-height:1.4}
+.offer .plan-basic .price{font-size:4.5rem}
+.plan-full .product-pack{max-width:350px;width:100%;margin:6px auto 20px;padding:12px 0}
+.plan-basic .basic-img{width:min(260px,100%);margin:18px auto}
+@media(min-width:1000px){
+ .offer .price-card>.plan-sub{min-height:48px}
+ .offer .price-card>.plan-name{min-height:39px}
+ .offer .plan-basic{border:3px solid transparent}
+}
+@media(min-width:901px){
+ .hero .hero-actions{grid-row:5}
+ .hero .trust{grid-row:6}
+ .hero .lead:not(.lead-first){grid-row:7}
+ .hero .receive{grid-row:8}
+ .hero .hero-art{grid-row:4/9}
+}
+@media(max-width:600px){
+ .hero .hero-actions .button{font-size:18px;min-height:52px;padding:15px 10px;white-space:normal;line-height:1.3}
+ .mobile-buy .button{font-size:17px;min-height:44px;padding:10px 12px}
+ .offer .price-card .button{font-size:18px}
+ .offer .plan-basic .price{font-size:3.7rem}
+}
