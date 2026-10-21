@@ -77,7 +77,8 @@
   const offer = document.querySelector('#oferta');
   const contents = document.querySelector('#conteudo');
   function updateBuyBar() {
-    const reachedContents = contents.getBoundingClientRect().top <= innerHeight;
+    const heroButton = document.querySelector('.hero-actions .button');
+    const reachedContents = heroButton ? heroButton.getBoundingClientRect().bottom < 0 : contents.getBoundingClientRect().top <= innerHeight;
     const bounds = offer.getBoundingClientRect();
     const viewingOffer = bounds.top < innerHeight && bounds.bottom > 0;
     const show = reachedContents && !viewingOffer;
