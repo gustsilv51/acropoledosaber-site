@@ -31,3 +31,30 @@
 
 /* Leitura confortável em telas pequenas e grandes. */
 .hero-description,.welcome-copy,.steps-grid p,.journey-list p,.bonus-copy>p,.checklist,.offer-intro>p:not(.eyebrow),.included li,.faq-list p,.guarantee-grid p:not(.eyebrow){font-size:16px;line-height:1.8}.faq-list summary{font-size:16px;line-height:1.6}.eyebrow{font-size:14px;letter-spacing:.1em}.button{font-size:16px}.checkout-status,.format-note,.payment-note,.payment-method-note,.testimonial-note,.footer-bottom,.footer-main>a:last-child{font-size:14px;line-height:1.7}.included span{font-size:14px}.mobile-offer span,.mobile-offer b{font-size:14px}.hero-price small{font-size:14px}.hero-price strong{font-size:24px}.brand small{letter-spacing:.2em}.hero-bottom{letter-spacing:.06em}.footer-main p{font-size:16px}.book-leaf span{font-size:14px}.prayer-controls{row-gap:12px}@media(max-width:760px){.topline{font-size:14px;line-height:1.5}.offer-strip{padding:12px 16px;gap:8px 16px}.offer-strip strong{font-size:18px}.offer-strip b{font-size:14px}.hero .eyebrow{font-size:14px}.nav{height:auto;min-height:90px;gap:14px;padding-block:15px;flex-wrap:wrap}.nav nav{margin-left:auto}.hero-bottom{font-size:14px;gap:12px;letter-spacing:0}.hero-bottom i{display:none}.footer-bottom{font-size:14px}.mobile-offer{padding:12px 16px}.mobile-offer a{gap:12px}.mobile-offer strong{font-size:25px}.mobile-offer b{padding:12px}.footer{padding-bottom:145px}}
+
+/* Faixa integral da oferta de lançamento. */
+.offer-card{overflow:visible}.offer-card .offer-date-button{display:flex;width:calc(100% + 72px);margin:-35px -36px 26px;padding:17px 24px;min-height:60px;border-radius:0;border:0;background:#a34e25;color:#fff;font-size:19px;font-weight:700;letter-spacing:.025em;text-align:center;animation:launch-offer-pulse 1.8s ease-in-out infinite}.offer-date-button:hover{animation-play-state:paused}.offer-date-button:focus-visible{animation:none}@keyframes launch-offer-pulse{0%,100%{background:#a34e25;box-shadow:0 0 0 0 #a34e2566;filter:brightness(1)}50%{background:#bd5c2b;box-shadow:0 0 0 8px #a34e2500,0 5px 24px #a34e2559;filter:brightness(1.12)}}@media(max-width:760px){.offer-card .offer-date-button{width:calc(100% + 50px);margin:-29px -25px 25px;font-size:19px}}@media(max-width:370px){.offer-card .offer-date-button{width:calc(100% + 40px);margin:-25px -20px 25px}}@media(prefers-reduced-motion:reduce){.offer-card .offer-date-button{animation:none!important}}
+
+/* Mobile: capa depois do título e leitura de uma página por vez. */
+@media(max-width:760px){
+  .header{display:none}
+  .hero-grid{display:flex;flex-direction:column;gap:0}
+  .hero-copy{display:contents}
+  .hero-copy>.eyebrow{order:1;text-align:center;width:100%}
+  .hero-copy>h1{order:2;text-align:center;width:100%;margin-bottom:0}
+  .hero-grid>.hero-art{order:3;width:100%;margin:24px 0 28px;min-height:470px;flex-shrink:0}
+  .hero-copy>.hero-lead{order:4;text-align:center;margin-bottom:17px}
+  .hero-copy>.hero-description{order:5;text-align:center}
+  .hero-copy>.actions{order:6}
+  .hero-copy>.hero-price{order:7}
+  .hero .hero-bottom{margin-top:28px}
+  .prayer-book{width:100%;max-width:500px}
+  .prayer-spread{grid-template-columns:1fr}
+  .spreads:after{display:none}
+  .book-cover{padding:7px;border-radius:4px 9px 9px 4px}
+  .book-leaf{width:100%}
+  .book-leaf span{font-size:14px;padding:12px 14px}
+  .turning-leaf{left:7px;right:7px;top:7px;bottom:7px}
+  .turning-leaf img{height:calc(100% - 40px)}
+}
+@media(max-width:370px){.hero-grid>.hero-art{min-height:435px}}

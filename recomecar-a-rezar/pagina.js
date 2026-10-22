@@ -11,7 +11,7 @@
     const day=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'});
     const lastDay=Number.isFinite(end.getTime()) && today<end && day.format(today)===day.format(end);
     document.querySelector('[data-offer-top]').textContent=lastDay?'⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE':`⚡ OFERTA DE HOJE · ${currentDate}`;
-    document.querySelector('[data-offer-label]').textContent=lastDay?'⏰ Última chance — oferta termina hoje':`✦ Oferta de hoje · ${currentDate}`;
+    document.querySelector('[data-offer-label]').textContent='Oferta de Lançamento';
   }
   updateOfferLabels();setInterval(updateOfferLabels,60000);
   let checkout;
@@ -48,28 +48,36 @@
   const turning=book.querySelector('.turning-leaf');
   const pause=book.querySelector('.book-pause');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let current=0, paused=reduced.matches, busy=false, visible=false;
+  const mobileBook=matchMedia('(max-width:760px)');
+  const leaves=[...book.querySelectorAll('.book-leaf')];
+  let current=0, paused=reduced.matches, busy=false, visible=false, swapTimer, endTimer;
   function updatePause(){pause.textContent=paused?'Retomar livro':'Pausar livro';pause.setAttribute('aria-pressed',String(paused));}
-  function showSpread(next){
-    if(busy)return;
-    const old=current;current=(next+spreads.length)%spreads.length;
-    if(old===current)return;
-    const commit=()=>{spreads.forEach((s,i)=>s.hidden=i!==current);book.querySelector('.book-count').textContent=`Encontros ${current*2+1}–${current*2+2} de 6`;};
-    if(reduced.matches){commit();return;}
-    busy=true;
-    turning.querySelector('img').src=spreads[old].querySelector('button:last-child img').src;
-    turning.classList.add('is-turning');
-    setTimeout(commit,340);
-    setTimeout(()=>{turning.classList.remove('is-turning');busy=false;},760);
+  function renderBook(){
+    const spread=Math.floor(current/2);
+    spreads.forEach((s,i)=>s.hidden=i!==spread);
+    leaves.forEach((leaf,i)=>leaf.hidden=mobileBook.matches && i!==current);
+    book.querySelector('.book-count').textContent=mobileBook.matches?`Encontro ${current+1} de 6`:`Encontros ${spread*2+1}–${spread*2+2} de 6`;
   }
-  book.querySelector('.book-prev').addEventListener('click',()=>{paused=true;updatePause();showSpread(current-1);});
-  book.querySelector('.book-next').addEventListener('click',()=>{paused=true;updatePause();showSpread(current+1);});
+  function turnBook(direction){
+    if(busy)return;
+    const old=current;
+    current=mobileBook.matches?(current+direction+6)%6:((Math.floor(current/2)+direction+3)%3)*2;
+    if(reduced.matches){renderBook();return;}
+    busy=true;
+    turning.querySelector('img').src=leaves[mobileBook.matches?old:Math.floor(old/2)*2+1].querySelector('img').src;
+    turning.classList.add('is-turning');
+    swapTimer=setTimeout(renderBook,340);
+    endTimer=setTimeout(()=>{turning.classList.remove('is-turning');busy=false;},760);
+  }
+  book.querySelector('.book-prev').addEventListener('click',()=>{paused=true;updatePause();turnBook(-1);});
+  book.querySelector('.book-next').addEventListener('click',()=>{paused=true;updatePause();turnBook(1);});
   pause.addEventListener('click',()=>{paused=!paused;updatePause();});
-  book.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();paused=true;updatePause();showSpread(current+(e.key==='ArrowRight'?1:-1));}});
+  book.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();paused=true;updatePause();turnBook(e.key==='ArrowRight'?1:-1);}});
   reduced.addEventListener('change',e=>{paused=e.matches;updatePause();});
+  mobileBook.addEventListener('change',()=>{clearTimeout(swapTimer);clearTimeout(endTimer);turning.classList.remove('is-turning');busy=false;renderBook();});
   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{threshold:0.15}).observe(book);
-  setInterval(()=>{if(!paused&&visible&&!document.hidden&&!document.querySelector('.lightbox').open)showSpread(current+1);},8000);
-  updatePause();
+  setInterval(()=>{if(!paused&&visible&&!document.hidden&&!document.querySelector('.lightbox').open)turnBook(1);},8000);
+  updatePause();renderBook();
   const dialog=document.querySelector('.lightbox');
   let opener;
   function openImage(src,alt,origin) {
