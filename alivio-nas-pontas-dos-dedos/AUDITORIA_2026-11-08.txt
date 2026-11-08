@@ -1,0 +1,15 @@
+CORREÇÕES DA AUDITORIA — 08/11/2026
+
+Aplicadas: espaços nos títulos móveis; selo fora da capa; nome no H1; SEO com acupressão/reflexologia; fonte mínima de 12px; fontes locais com licenças; imagem OG em paisagem com dimensões; contato real de interesse por email no pré-lançamento; medição condicionada à permissão; eventos do funil; preferências de cookies no rodapé; garantia configurável sem valor presumido.
+
+Capa: a V4 do ebook retomou a capa da V2, a mesma usada na página. Não se substituiu a capa por uma versão divergente.
+
+Contato: abre email e depende do envio pelo visitante; não é uma lista automática. A opção da auditoria de adiar anúncios foi mantida, conforme a orientação anterior do autor.
+
+Não executados: publicação do repositório; confirmação de garantia na conta Hotmart; vínculo Purchase na Hotmart; revisão clínica; depoimentos/endosso; campanhas e teste A/B de preço. Esses itens dependem da conta, oferta ou profissional ainda não definidos. Nenhum dado comercial foi inventado.
+
+Os dois bônus já pertencem à oferta; não foram vendidos novamente como order bump. Criativos e políticas de anúncios devem ser conferidos no lançamento; não houve promessa de aprovação automática.
+
+Backup completo anterior: pasta 07_Site/Backup_antes_auditoria_20261108, nos materiais do ebook.
+
+CONFERÊNCIA FINAL: viewports 320, 390 e 1280 px; sem rolagem horizontal; nenhum texto visível abaixo de 12 px nas conferências; capa e etiqueta sem interseção; abrir, navegar, fechar por Esc e devolver foco no lightbox conferidos. Sem erros de JavaScript observados. Preferências lembradas após recarregar, recusa e reabertura testadas. Não foi realizado teste em aparelho físico. Testes offline do checkout, garantia configurável, consentimento e eventos aprovados. Imagem OG JPEG 1200x630 conferida. Capa comparada à página 1 da V4: diferença média de 1,076 em escala de 0 a 255, compatível com redimensionamento/compressão. Links locais, âncoras e fontes verificados. Nenhuma transmissão de teste ao Pixel real.
